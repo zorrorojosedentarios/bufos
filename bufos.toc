@@ -1,0 +1,9 @@
+﻿## Interface: 30300
+## Title: !|cff00ffffAddon Naer|r |cff33ff33[bufos]|r
+## Notes: Escanea los beneficios de banda (RaidBuffChecker).
+## Author: Zorrorojo/Miabuelita (Guild Sedentarios)
+## Version: 1.0
+## SavedVariables: RBC_SavedAssignments, RBC_ButtonPosition
+## X-Part-Of: !|cff00ffffAddon Naer|r
+
+RaidBuffChecker.lua
