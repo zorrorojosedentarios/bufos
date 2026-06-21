@@ -63,7 +63,7 @@ local function InitializeSpellNames()
         Entereza = { 48162, 48161, 48066, 1243 },                          -- Prayer of Fortitude, Power Word: Fortitude
         Sombra = { 48170, 48169, 25433 },                                  -- Prayer of Shadow Protection, Shadow Protection
         Espiritu = { 48074, 48073, 14752 },                                -- Prayer of Spirit, Divine Spirit
-        Marca = { 48470, 48469, 1126 },                                    -- Gift of the Wild, Mark of the Wild
+        Marca = { 48470, 48469, 48870, 1126 },                             -- Gift of the Wild, Mark of the Wild
         Intelecto = { 43002, 43008, 27127, 1459, 61316, 61024 },           -- Arcane Brilliance, Arcane Intellect, Dalaran Brilliance, Dalaran Intellect
         Grito = { 47436, 25289, 25290, 11549, 11550, 11551, 11552, 2048 }, -- Battle Shout (Grito de batalla)
         EnfoqueDeMagia = { 54646 }                                         -- Focus Magic
@@ -555,7 +555,7 @@ local function ExecuteAdvancedRaidCheck(isSilent)
         if #temp_missingMarca > 0 then
             local header = (Assignments.DRUID_MARCA and Assignments.DRUID_MARCA ~= "") and Assignments.DRUID_MARCA or
                 "DruidaMarca"
-            SendRaidReport(string.format("[%s] Falta MARCA.", header))
+            SendRaidReport(string.format("[%s] Falta DON DE LO SALVAJE.", header))
             alertCount = alertCount + 1
         end
     end
@@ -685,8 +685,8 @@ local function FormatTrackingReport(results)
     local gritoEmptyMsg = (results.Eligible.Physical == 0) and "|cff999999(Sin clases físicas)|r" or nil
     AddSection("Grito de Batalla", results.Grito, "c79c6e", gritoEmptyMsg)
 
-    -- 4. Marca de lo Salvaje
-    AddSection("Marca de lo Salvaje", results.Marca, "ff7d0a")
+    -- 4. Don de lo Salvaje
+    AddSection("Don de lo Salvaje", results.Marca, "ff7d0a")
 
     -- 5. Luminosidad Arcana / Intelecto
     local intEmptyMsg = (results.Eligible.Mana == 0) and "|cff999999(Sin clases de maná)|r" or nil
